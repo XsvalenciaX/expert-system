@@ -11,19 +11,19 @@ riesgo = ctrl.Consequent(np.arange(0, 11, 1), "riesgo")
 
 # --- Funciones de pertenencia ---
 # Postura (1 = mala, 10 = muy buena)
-postura["inadecuada"] = fuzz.trimf(postura.universe, [1, 1, 4])       # Malo
-postura["regular"] = fuzz.trimf(postura.universe, [3, 5, 7])          # Medio
-postura["buena"] = fuzz.trimf(postura.universe, [6, 10, 10])          # Muy bueno
+postura["inadecuada"] = fuzz.trimf(postura.universe, [1, 1, 4])       
+postura["regular"] = fuzz.trimf(postura.universe, [3, 5, 7])         
+postura["buena"] = fuzz.trimf(postura.universe, [6, 10, 10])         
 
 # Carga (1 = alta, 10 = baja)
-carga["alta"] = fuzz.trimf(carga.universe, [1, 1, 4])                 # Malo
-carga["moderada"] = fuzz.trimf(carga.universe, [3, 5, 7])             # Medio
-carga["baja"] = fuzz.trimf(carga.universe, [6, 10, 10])               # Muy bueno
+carga["alta"] = fuzz.trimf(carga.universe, [1, 1, 4])                 
+carga["moderada"] = fuzz.trimf(carga.universe, [3, 5, 7])            
+carga["baja"] = fuzz.trimf(carga.universe, [6, 10, 10])               
 
 # Ambiente (1 = inadecuado, 10 = adecuado)
-ambiente["inadecuado"] = fuzz.trimf(ambiente.universe, [1, 1, 4])     # Malo
-ambiente["tolerable"] = fuzz.trimf(ambiente.universe, [3, 5.5, 7])    # Medio
-ambiente["adecuado"] = fuzz.trimf(ambiente.universe, [6, 10, 10])     # Muy bueno
+ambiente["inadecuado"] = fuzz.trimf(ambiente.universe, [1, 1, 4])    
+ambiente["tolerable"] = fuzz.trimf(ambiente.universe, [3, 5.5, 7])   
+ambiente["adecuado"] = fuzz.trimf(ambiente.universe, [6, 10, 10])   
 
 # Riesgo (0 = bajo, 10 = alto)
 riesgo["bajo"] = fuzz.trimf(riesgo.universe, [0, 0, 3.5])
