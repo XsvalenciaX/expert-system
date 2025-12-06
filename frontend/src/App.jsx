@@ -4,11 +4,12 @@ import Home from "./pages/Home";
 import ExpertSystem from "./pages/ExpertSystem";
 import Navbar from "./components/Navbar";
 import ExpertSystemFuzzy from "./pages/ExpertSystemFuzzy";
+import IntelligencesAgent from "./pages/IntelligencesAgent";
 
 function App() {
   return (
     <Router>
-      <CssBaseline /> 
+      <CssBaseline />
       <Navbar />
       <Box
         component="main"
@@ -32,6 +33,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/expert" element={<ExpertSystem />} />
             <Route path="/expert-fuzzy" element={<ExpertSystemFuzzy />} />
+            <Route path="/intelligence-agent" element={<IntelligencesAgent />} />
           </Routes>
         </Container>
       </Box>

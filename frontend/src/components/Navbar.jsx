@@ -22,6 +22,9 @@ const Navbar = () => {
            <Button color="inherit" component={Link} to="/expert-fuzzy">
             Sistema Experto Difuso
           </Button>
+           <Button color="inherit" component={Link} to="/intelligence-agent">
+            Agente Inteligente
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

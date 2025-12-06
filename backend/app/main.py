@@ -5,7 +5,7 @@ from app.expert_system import run_expert_system
 from app.expert_system_fuzzy import run_fuzzy_system, postura, carga, ambiente
 from app.graphs import plot_membership
 from app.expert_system_fuzzy import run_fuzzy_system, postura, carga, ambiente, riesgo, riesgo_eval
-
+from app.intelligent_agents import run_weekly_agent
 
 app = FastAPI(title="Sistema Experto Vocacional")
 
@@ -16,6 +16,19 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+class AgentTask(BaseModel):
+    id: int
+    name: str
+    duration: float
+    priority: int
+    deadline: int | None = None
+
+class AgentInput(BaseModel):
+    days: list[str]
+    daily_capacity: list[float]
+    tasks: list[AgentTask]
+
 class InputData(BaseModel):
     respuestas: list[str]
 
@@ -52,3 +65,7 @@ def fuzzy_graphs(data: FuzzyInput):
     }
 
     return graphs
+
+@app.post("/run-agent")
+def run_agent(data: AgentInput):
+    return run_weekly_agent(data)
